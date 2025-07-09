@@ -1,0 +1,88 @@
+# 📚 Capstone Project: Greenwood Community Library Website
+Simulate a real-world collaborative development process by creating a GitHub repository where two team members (Morgan and Jamie) contribute changes on separate branches, raise pull requests, and merge their work.
+---
+## ✅ Part 1: Project Setup (Admin Role)
+
+### 1. **Create Repository on GitHub**
+- Go to [GitHub](https://github.com) → click `+ > New repository`
+- Name the repo: `greenwood-library-website`
+- Check “Initialize with a README”
+- Click **Create Repository**
+
+### 2. **Clone the Repo to Your Local Machine**
+```bash
+git clone https://github.com/your-username/greenwood-library-website.git
+cd greenwood-library-website
+```
+---
+## 💻 Part 2: Prepare Base Website Pages on `main` Branch
+
+### 3. **Create HTML Files**
+```bash
+touch home.html about_us.html events.html contact_us.html
+```
+### 4. **Add Random Content to Each File**
+You can use `echo` to populate quickly:
+```bash
+echo "Welcome to the Greenwood Community Library Home Page." > home.html
+echo "About our mission and community impact." > about_us.html
+echo "Upcoming events: Book Fair, Reading Marathon..." > events.html
+echo "Contact us at info@greenwoodlibrary.org" > contact_us.html
+```
+### 5. **Track, Commit & Push to `main`**
+```bash
+git add .
+git commit -m "Add base web pages with placeholder content"
+git push origin main
+```---
+## 👩‍💻 Part 3: Morgan Adds Book Reviews (Feature Branch)
+### 6. **Create & Switch to Morgan’s Branch**
+```bash
+git checkout -b add-book-reviews
+### 7. **Create `book_reviews.html` and Add Content**
+```bash
+echo "Our favorite books this month: The Alchemist, Atomic Habits, and Educated." > book_reviews.html
+```
+### 8. **Commit and Push Morgan’s Work**
+```bash
+git add book_reviews.html
+git commit -m "Add book reviews section"
+git push origin add-book-reviews
+```
+### 9. **Create Pull Request for Morgan**
+- Go to GitHub
+- Click **Compare & Pull Request**
+- Title: “Add Book Reviews Section”
+- Click **Create Pull Request**
+- Then click **Merge Pull Request** → Confirm
+---
+## 👨‍💻 Part 4: Jamie Updates Events Page (With Latest Changes)
+
+### 10. **Create & Switch to Jamie’s Branch**
+```bash
+git checkout -b update-events
+```
+### 11. **Pull Latest from `main` (to include Morgan’s updates)**
+```bash
+git pull origin main
+```
+### 12. **Edit `events.html`**
+```bash
+echo "Updated Events: Author Q&A, Storytelling Night, Teen Coding Bootcamp." > events.html
+```
+### 13. **Commit and Push Jamie’s Work**
+```bash
+git add events.html
+git commit -m "Update community events listing"
+git push origin update-events
+```
+## 🔁 Part 5: Pull Request & Merge Jamie’s Work
+### 14. **Create Pull Request for Jamie**
+- On GitHub, switch to `update-events` branch
+- Click **Compare & Pull Request**
+- Title: “Update Events Page”
+- Create and then **Merge Pull Request**---
+## 🧾 Final Check
+
+- All pages (`home.html`, `about_us.html`, `events.html`, `contact_us.html`, `book_reviews.html`) are visible in the `main` branch
+- GitHub repository reflects two merged feature branches
